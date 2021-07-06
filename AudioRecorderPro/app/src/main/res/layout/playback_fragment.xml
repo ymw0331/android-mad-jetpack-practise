@@ -22,8 +22,7 @@
         android:id="@+id/playbackSeekBar"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/recordFragmentPlayImageButton"
+        app:layout_constraintBottom_toTopOf="@+id/playbackFragmentPlayImageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
@@ -32,12 +31,13 @@
         android:id="@+id/ffImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:src="@android:drawable/ic_media_ff"
-        app:layout_constraintBottom_toBottomOf="@+id/recordFragmentPlayImageButton"
-        app:layout_constraintStart_toEndOf="@id/recordFragmentPlayImageButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/playbackFragmentPlayImageButton"
+        app:layout_constraintEnd_toEndOf="@+id/playbackSeekBar" />
 
     <ImageButton
-        android:id="@+id/recordFragmentPlayImageButton"
+        android:id="@+id/playbackFragmentPlayImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
@@ -51,10 +51,10 @@
         android:id="@+id/rvImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="32dp"
         android:src="@android:drawable/ic_media_rew"
-        app:layout_constraintBottom_toBottomOf="@+id/recordFragmentPlayImageButton"
-        app:layout_constraintEnd_toStartOf="@+id/recordFragmentPlayImageButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/playbackFragmentPlayImageButton"
+        app:layout_constraintStart_toStartOf="@+id/playbackSeekBar" />
 
     <ImageButton
         android:id="@+id/shareButton"
