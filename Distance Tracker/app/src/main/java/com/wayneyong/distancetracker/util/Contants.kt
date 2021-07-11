@@ -15,5 +15,8 @@ object Contants {
 
     const val PENDING_INTENT_REQUEST_CODE = 99
 
+    const val LOCATION_UPDATE_INTERVAL =   4000L
+    const val LOCATION_FASTEST_UPDATE_INTERVAL = 2000L
+
 
 }

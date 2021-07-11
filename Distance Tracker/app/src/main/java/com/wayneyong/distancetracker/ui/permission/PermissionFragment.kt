@@ -1,4 +1,4 @@
-package com.wayneyong.distancetracker
+package com.wayneyong.distancetracker.ui.permission
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.vmadalin.easypermissions.EasyPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
+import com.wayneyong.distancetracker.R
 import com.wayneyong.distancetracker.util.Permissions.hasLocationPermission
 import com.wayneyong.distancetracker.util.Permissions.requestLocationPermission
 import com.wayneyong.distancetracker.databinding.FragmentPermissionBinding

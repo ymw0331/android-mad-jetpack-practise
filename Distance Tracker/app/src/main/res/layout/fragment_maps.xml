@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="tracking"
+            type="com.wayneyong.distancetracker.ui.maps.MapsFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +24,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:context=".MapsFragment" />
+            tools:context=".ui.maps.MapsFragment" />
 
         <TextView
             android:id="@+id/timer_textView"
@@ -40,6 +43,7 @@
 
         <TextView
             android:id="@+id/hint_textView"
+            observeTracking="@{tracking.started}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tap_on_my_location_button"
@@ -57,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+
             android:text="@string/start"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -65,6 +70,7 @@
 
         <Button
             android:id="@+id/stop_button"
+            observeTracking="@{tracking.started}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"

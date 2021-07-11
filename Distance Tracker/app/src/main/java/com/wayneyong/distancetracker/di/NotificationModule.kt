@@ -5,7 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
-import com.wayneyong.distancetracker.MainActivity
+import com.wayneyong.distancetracker.ui.MainActivity
 import com.wayneyong.distancetracker.R
 import com.wayneyong.distancetracker.util.Contants.ACTION_NAVIGATE_TO_MAPS_FRAGMENT
 import com.wayneyong.distancetracker.util.Contants.NOTIFICATION_CHANNEL_ID
@@ -29,10 +29,8 @@ object NotificationModule {
         return PendingIntent.getActivity(
             context,
             PENDING_INTENT_REQUEST_CODE,
-            Intent(context, MainActivity::class.java).apply {
-                this.action = ACTION_NAVIGATE_TO_MAPS_FRAGMENT
-            },
-            PendingIntent.FLAG_CANCEL_CURRENT
+            Intent(context, MainActivity::class.java), //define where to navigate when this is notification clicked
+            PendingIntent.FLAG_UPDATE_CURRENT
         )
     }
 
@@ -42,12 +40,14 @@ object NotificationModule {
     fun provideNotificationBuilder(
         @ApplicationContext context: Context,
         pendingIntent: PendingIntent
-    ): NotificationCompat.Builder {
+    ): NotificationCompat.Builder
+    {
         return NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
             .setAutoCancel(false)
             .setOngoing(true)
             .setSmallIcon(R.drawable.ic_run)
             .setContentIntent(pendingIntent)
+        //set the top bar notification
     }
 
     @ServiceScoped
